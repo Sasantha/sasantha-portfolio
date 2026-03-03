@@ -17,6 +17,29 @@ export const metadata: Metadata = {
     template: `%s | ${profile.name}`,
   },
   description: profile.summary,
+  keywords: [
+    "Web Developer Sri Lanka",
+    "Freelance Web Developer Sri Lanka",
+    "Next.js Developer Sri Lanka",
+    "ASP.NET Developer Sri Lanka",
+    "Full Stack Developer Sri Lanka",
+    "Corporate Website Developer",
+    "Piliyandala Web Developer",
+  ],
+  authors: [{ name: profile.name, url: "https://sasantha-portfolio.vercel.app" }],
+  creator: profile.name,
+  alternates: {
+    canonical: "https://sasantha-portfolio.vercel.app",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
   openGraph: {
     title: `${profile.name} | ${profile.title}`,
     description: profile.summary,
@@ -24,11 +47,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://sasantha-portfolio.vercel.app",
     siteName: `${profile.name} Portfolio`,
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${profile.name} portfolio preview`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} | ${profile.title}`,
     description: profile.summary,
+    images: ["/og.png"],
   },
 };
 

@@ -11,8 +11,26 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.name,
+    jobTitle: "Full Stack Web Developer",
+    url: "https://sasantha-portfolio.vercel.app",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Piliyandala",
+      addressCountry: "Sri Lanka",
+    },
+    sameAs: [profile.socials.github, profile.socials.linkedin],
+  };
+
   return (
     <div className="space-y-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <section
         aria-labelledby="hero-heading"
         className="grid gap-8 py-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"
@@ -25,7 +43,7 @@ export default function HomePage() {
             id="hero-heading"
             className="max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl"
           >
-            Building practical web products that scale and stay maintainable.
+            Full-Stack Web Developer in Sri Lanka
           </h1>
           <p className="max-w-2xl text-lg text-slate-600">{profile.summary}</p>
           <div className="flex flex-wrap gap-3">
@@ -65,6 +83,47 @@ export default function HomePage() {
             </li>
           </ul>
         </aside>
+      </section>
+
+      <section aria-labelledby="nextjs-react-heading" className="space-y-3">
+        <h2 id="nextjs-react-heading" className="text-2xl font-semibold text-slate-900">
+          Next.js & React Development
+        </h2>
+        <p className="max-w-3xl text-slate-600">
+          I build fast, SEO-friendly and maintainable frontend applications with
+          Next.js, React, and TypeScript for product teams and growing
+          businesses.
+        </p>
+      </section>
+
+      <section aria-labelledby="aspnet-backend-heading" className="space-y-3">
+        <h2 id="aspnet-backend-heading" className="text-2xl font-semibold text-slate-900">
+          ASP.NET & Backend Systems
+        </h2>
+        <p className="max-w-3xl text-slate-600">
+          I develop dependable backend services, authentication flows, and data
+          models using ASP.NET, C#, and SQL-backed infrastructure.
+        </p>
+      </section>
+
+      <section aria-labelledby="corporate-web-heading" className="space-y-3">
+        <h2 id="corporate-web-heading" className="text-2xl font-semibold text-slate-900">
+          Corporate Website Development
+        </h2>
+        <p className="max-w-3xl text-slate-600">
+          I create conversion-focused corporate websites that prioritize
+          performance, accessibility, and clear content architecture.
+        </p>
+      </section>
+
+      <section aria-labelledby="api-business-heading" className="space-y-3">
+        <h2 id="api-business-heading" className="text-2xl font-semibold text-slate-900">
+          API & Business System Development
+        </h2>
+        <p className="max-w-3xl text-slate-600">
+          I design and implement APIs and internal business systems that connect
+          teams, automate workflows, and support long-term scaling.
+        </p>
       </section>
 
       <section
