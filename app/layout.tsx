@@ -11,6 +11,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  verification: {
+  google: "googlee08ebcd3ad81b8b5.html",
+},
   metadataBase: new URL("https://sasantha-portfolio.vercel.app"),
   title: {
     default: `${profile.name} | ${profile.title}`,
