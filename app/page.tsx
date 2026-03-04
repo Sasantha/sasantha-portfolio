@@ -6,7 +6,7 @@ import { profile } from "@/content/profile";
 
 export const metadata: Metadata = {
   description:
-    "Professional full-stack web developer specializing in Next.js, React, Node.js and modern business websites. Explore my portfolio and completed projects.",
+    "Full-stack web developer in Sri Lanka specializing in Next.js, React, ASP.NET, and modern business systems. View my portfolio and completed projects.",
 };
 
 export default function HomePage() {
@@ -38,13 +38,19 @@ export default function HomePage() {
           <p className="inline-flex w-fit border border-slate-300 px-3 py-1 text-xs font-semibold tracking-wide text-slate-700">
             {profile.title}
           </p>
+          <p className="text-sm font-semibold tracking-wide text-slate-700">
+            Sasantha Perera
+          </p>
           <h1
             id="hero-heading"
             className="max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl"
           >
-            Full-Stack Web Developer in Sri Lanka
+            Full-Stack Web Developer in Sri Lanka - Sasantha Perera
           </h1>
-          <p className="max-w-2xl text-lg text-slate-600">{profile.summary}</p>
+          <p className="max-w-2xl text-lg text-slate-600">
+            Building modern business websites, SaaS platforms, and API systems
+            using Next.js, React, Node.js and ASP.NET.
+          </p>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/projects"

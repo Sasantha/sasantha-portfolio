@@ -13,11 +13,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sasantha-portfolio.vercel.app"),
   title: {
-    default: "Full Stack Web Developer in Sri Lanka | Sasantha Portfolio",
-    template: `%s | ${profile.name}`,
+    default: "Sasantha Perera - Full Stack Web Developer in Asia | Next.js & ASP.NET",
+    template: "%s | Sasantha Perera",
   },
   description:
-    "Professional full-stack web developer specializing in Next.js, React, Node.js and modern business websites. Explore my portfolio and completed projects.",
+    "Full-stack web developer in Sri Lanka specializing in Next.js, React, ASP.NET, and modern business systems. View my portfolio and completed projects.",
   keywords: [
     "Web Developer Sri Lanka",
     "Freelance Web Developer Sri Lanka",
@@ -45,12 +45,13 @@ export const metadata: Metadata = {
     google: "OZxMa6-p35bxHCItQpB6eEenGXy9pVxczKarXWXh7aU",
   },
   openGraph: {
-    title: `${profile.name} | ${profile.title}`,
-    description: profile.summary,
+    title: "Sasantha Perera - Full Stack Web Developer",
+    description:
+      "Portfolio of Sasantha Perera, full-stack developer building business websites, APIs, and SaaS systems.",
     type: "website",
     locale: "en_US",
     url: "https://sasantha-portfolio.vercel.app",
-    siteName: `${profile.name} Portfolio`,
+    siteName: "Sasantha Portfolio",
     images: [
       {
         url: "/og.png",
@@ -62,11 +63,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | ${profile.title}`,
-    description: profile.summary,
+    title: "Sasantha Perera - Full Stack Web Developer",
+    description: "Portfolio of full-stack web developer Sasantha Perera.",
     images: ["/og.png"],
   },
-  
 };
 
 export default function RootLayout({
