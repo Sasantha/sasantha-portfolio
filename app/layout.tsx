@@ -13,10 +13,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sasantha-portfolio.vercel.app"),
   title: {
-    default: `${profile.name} | ${profile.title}`,
+    default: "Full Stack Web Developer in Sri Lanka | Sasantha Portfolio",
     template: `%s | ${profile.name}`,
   },
-  description: profile.summary,
+  description:
+    "Professional full-stack web developer specializing in Next.js, React, Node.js and modern business websites. Explore my portfolio and completed projects.",
   keywords: [
     "Web Developer Sri Lanka",
     "Freelance Web Developer Sri Lanka",

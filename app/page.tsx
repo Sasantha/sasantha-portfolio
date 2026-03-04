@@ -5,9 +5,8 @@ import { featuredProjects } from "@/content/projects";
 import { profile } from "@/content/profile";
 
 export const metadata: Metadata = {
-  title: "Home",
   description:
-    "Portfolio home for Sasantha Perera, full-stack developer building scalable web applications.",
+    "Professional full-stack web developer specializing in Next.js, React, Node.js and modern business websites. Explore my portfolio and completed projects.",
 };
 
 export default function HomePage() {
