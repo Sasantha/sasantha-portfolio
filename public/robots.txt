@@ -2,8 +2,5 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://sasantha-portfolio.vercel.app
-
 # Sitemaps
 Sitemap: https://sasantha-portfolio.vercel.app/sitemap.xml
