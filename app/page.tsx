@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProjectCard } from "@/components/project-card";
 import { profile } from "@/content/profile";
-import { getBaseUrl } from "@/lib/base-url";
 import type { ProjectRecord } from "@/lib/types/project";
+import { listProjects } from "@/lib/project-repo";
 
 export const metadata: Metadata = {
   description:
@@ -11,16 +11,11 @@ export const metadata: Metadata = {
 };
 
 async function getHomeProjects() {
-  const response = await fetch(`${getBaseUrl()}/api/public/projects`, {
-    cache: "no-store",
-  });
-
-  if (!response.ok) {
+  const { data, error } = await listProjects("public");
+  if (error) {
     return [] as ProjectRecord[];
   }
-
-  const data = (await response.json()) as { projects: ProjectRecord[] };
-  return data.projects.slice(0, 6);
+  return data.slice(0, 6);
 }
 
 export default async function HomePage() {

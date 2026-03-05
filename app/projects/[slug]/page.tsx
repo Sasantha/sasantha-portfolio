@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBaseUrl } from "@/lib/base-url";
+import { getProjectBySlug as getProjectBySlugFromRepo } from "@/lib/project-repo";
 import type { ProjectRecord } from "@/lib/types/project";
 
 type ProjectDetailPageProps = {
@@ -10,16 +10,11 @@ type ProjectDetailPageProps = {
 };
 
 async function getProjectBySlug(slug: string) {
-  const response = await fetch(`${getBaseUrl()}/api/public/projects/${slug}`, {
-    cache: "no-store",
-  });
-
-  if (!response.ok) {
+  const { data, error } = await getProjectBySlugFromRepo(slug);
+  if (error) {
     return null;
   }
-
-  const data = (await response.json()) as { project: ProjectRecord };
-  return data.project;
+  return data as ProjectRecord | null;
 }
 
 export async function generateMetadata({

@@ -10,12 +10,20 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
 
-  const { data, error } = await listProjects("admin");
-  if (error) {
-    return NextResponse.json({ ok: false, error: "Failed to load projects" }, { status: 500 });
-  }
+  try {
+    const { data, error } = await listProjects("admin");
+    if (error) {
+      return NextResponse.json(
+        { ok: false, error: "Failed to load projects", details: error.message },
+        { status: 500 },
+      );
+    }
 
-  return NextResponse.json({ ok: true, projects: data });
+    return NextResponse.json({ ok: true, projects: data });
+  } catch (error) {
+    const details = error instanceof Error ? error.message : "Unknown server error";
+    return NextResponse.json({ ok: false, error: "Failed to load projects", details }, { status: 500 });
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -30,7 +38,10 @@ export async function POST(request: NextRequest) {
 
     const { exists, error: slugError } = await slugExists(input.slug);
     if (slugError) {
-      return NextResponse.json({ ok: false, error: "Failed to validate slug" }, { status: 500 });
+      return NextResponse.json(
+        { ok: false, error: "Failed to validate slug", details: slugError.message },
+        { status: 500 },
+      );
     }
 
     if (exists) {
@@ -39,7 +50,10 @@ export async function POST(request: NextRequest) {
 
     const { data: project, error: createError } = await createProject(input);
     if (createError || !project) {
-      return NextResponse.json({ ok: false, error: "Failed to create project" }, { status: 500 });
+      return NextResponse.json(
+        { ok: false, error: "Failed to create project", details: createError?.message ?? "No data returned" },
+        { status: 500 },
+      );
     }
 
     return NextResponse.json({ ok: true, project }, { status: 201 });
@@ -50,6 +64,7 @@ export async function POST(request: NextRequest) {
         { status: 400 },
       );
     }
-    return NextResponse.json({ ok: false, error: "Failed to create project" }, { status: 500 });
+    const details = error instanceof Error ? error.message : "Unknown server error";
+    return NextResponse.json({ ok: false, error: "Failed to create project", details }, { status: 500 });
   }
 }

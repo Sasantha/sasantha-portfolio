@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ProjectCard } from "@/components/project-card";
-import { getBaseUrl } from "@/lib/base-url";
 import type { ProjectRecord } from "@/lib/types/project";
+import { listProjects } from "@/lib/project-repo";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -9,16 +9,11 @@ export const metadata: Metadata = {
 };
 
 async function getProjects() {
-  const response = await fetch(`${getBaseUrl()}/api/public/projects`, {
-    cache: "no-store",
-  });
-
-  if (!response.ok) {
+  const { data, error } = await listProjects("public");
+  if (error) {
     return [] as ProjectRecord[];
   }
-
-  const data = (await response.json()) as { projects: ProjectRecord[] };
-  return data.projects;
+  return data;
 }
 
 export default async function ProjectsPage() {
