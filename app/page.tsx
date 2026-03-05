@@ -173,7 +173,7 @@ export default async function HomePage() {
             id="projects-heading"
             className="text-2xl font-semibold text-slate-900"
           >
-            Projects
+            Featured Projects
           </h2>
           <Link
             href="/projects"
