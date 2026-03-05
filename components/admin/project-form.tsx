@@ -23,6 +23,12 @@ type ProjectPayload = {
   coverImageUrl?: string;
 };
 
+type ApiErrorResponse = {
+  error?: string;
+  details?: string;
+  issues?: Array<{ message?: string; path?: Array<string | number> }>;
+};
+
 const toCsv = (values: string[]) => values.join(", ");
 const fromCsv = (value: string) =>
   value
@@ -76,8 +82,10 @@ export function ProjectForm({ mode, project }: ProjectFormProps) {
     });
 
     if (!response.ok) {
-      const data = (await response.json().catch(() => null)) as { error?: string } | null;
-      setError(data?.error ?? "Request failed.");
+      const data = (await response.json().catch(() => null)) as ApiErrorResponse | null;
+      const issueMessage =
+        data?.issues?.map((issue) => issue.message).filter(Boolean).join(", ") ?? "";
+      setError(issueMessage || data?.details || data?.error || "Request failed.");
       setIsSubmitting(false);
       return;
     }
@@ -96,8 +104,8 @@ export function ProjectForm({ mode, project }: ProjectFormProps) {
 
     const response = await fetch(`/api/projects/${project.id}`, { method: "DELETE" });
     if (!response.ok) {
-      const data = (await response.json().catch(() => null)) as { error?: string } | null;
-      setError(data?.error ?? "Delete failed.");
+      const data = (await response.json().catch(() => null)) as ApiErrorResponse | null;
+      setError(data?.details || data?.error || "Delete failed.");
       setIsSubmitting(false);
       return;
     }
@@ -180,16 +188,20 @@ export function ProjectForm({ mode, project }: ProjectFormProps) {
         <label className="space-y-1 text-sm">
           <span className="font-medium text-slate-700">Live URL</span>
           <input
+            type="url"
             value={liveUrl}
             onChange={(e) => setLiveUrl(e.target.value)}
+            placeholder="https://example.com"
             className="w-full border border-slate-300 px-3 py-2 outline-none ring-0 focus:border-slate-900"
           />
         </label>
         <label className="space-y-1 text-sm">
           <span className="font-medium text-slate-700">Repo URL</span>
           <input
+            type="url"
             value={repoUrl}
             onChange={(e) => setRepoUrl(e.target.value)}
+            placeholder="https://github.com/..."
             className="w-full border border-slate-300 px-3 py-2 outline-none ring-0 focus:border-slate-900"
           />
         </label>
@@ -199,8 +211,10 @@ export function ProjectForm({ mode, project }: ProjectFormProps) {
         <label className="space-y-1 text-sm">
           <span className="font-medium text-slate-700">Cover Image URL (optional)</span>
           <input
+            type="url"
             value={coverImageUrl}
             onChange={(e) => setCoverImageUrl(e.target.value)}
+            placeholder="https://example.com/cover.jpg"
             className="w-full border border-slate-300 px-3 py-2 outline-none ring-0 focus:border-slate-900"
           />
         </label>
