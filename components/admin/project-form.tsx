@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import type { ProjectRecord } from "@/lib/types/project";
 
 type ProjectFormProps = {
@@ -52,6 +53,39 @@ export function ProjectForm({ mode, project }: ProjectFormProps) {
   const [repoUrl, setRepoUrl] = useState(project?.repoUrl ?? "");
   const [coverImageUrl, setCoverImageUrl] = useState(project?.coverImageUrl ?? "");
   const [featured, setFeatured] = useState(project?.featured ?? false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    setUploadError(null);
+    setIsUploading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch("/api/uploads/project-cover", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as ApiErrorResponse | null;
+        setUploadError(data?.details || data?.error || "Image upload failed.");
+        return;
+      }
+
+      const data = (await response.json()) as { url: string };
+      setCoverImageUrl(data.url);
+    } catch {
+      setUploadError("Image upload failed.");
+    } finally {
+      setIsUploading(false);
+    }
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -217,6 +251,23 @@ export function ProjectForm({ mode, project }: ProjectFormProps) {
             placeholder="https://example.com/cover.jpg"
             className="w-full border border-slate-300 px-3 py-2 outline-none ring-0 focus:border-slate-900"
           />
+          <p className="text-xs text-slate-500">You can paste a URL or upload an image below.</p>
+          <input
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/avif,image/gif"
+            onChange={handleImageUpload}
+            className="w-full border border-slate-300 px-3 py-2 text-sm text-slate-700 outline-none ring-0 file:mr-3 file:border-0 file:bg-slate-900 file:px-3 file:py-2 file:text-white focus:border-slate-900"
+          />
+          {isUploading ? <p className="text-xs text-slate-500">Uploading image...</p> : null}
+          {coverImageUrl ? (
+            <Image
+              src={coverImageUrl}
+              alt="Cover preview"
+              width={640}
+              height={240}
+              className="mt-2 h-24 w-full rounded border border-slate-200 object-cover"
+            />
+          ) : null}
         </label>
         <label className="flex items-center gap-2 pt-7 text-sm text-slate-700">
           <input
@@ -229,12 +280,13 @@ export function ProjectForm({ mode, project }: ProjectFormProps) {
         </label>
       </div>
 
+      {uploadError ? <p className="text-sm text-red-600">{uploadError}</p> : null}
       {error ? <p className="text-sm text-red-600">{error}</p> : null}
 
       <div className="flex flex-wrap gap-3">
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || isUploading}
           className="border border-slate-900 bg-slate-900 px-4 py-2 text-sm font-semibold text-white disabled:opacity-60"
         >
           {isSubmitting ? "Saving..." : mode === "create" ? "Create Project" : "Save Changes"}

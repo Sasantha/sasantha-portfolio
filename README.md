@@ -13,6 +13,7 @@ AUTH_SECRET=long_random_secret
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_SUPABASE_URL=https://<project-ref>.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=<service-role-key>
+SUPABASE_STORAGE_BUCKET=project-covers
 ```
 
 ## Database Setup
@@ -45,6 +46,17 @@ Set these variables in Vercel Project Settings:
 - `NEXT_PUBLIC_SITE_URL` -> production URL (`https://sasantha-portfolio.vercel.app`)
 - `NEXT_PUBLIC_SUPABASE_URL` -> `https://<project-ref>.supabase.co`
 - `SUPABASE_SERVICE_ROLE_KEY` -> Supabase service role key (server-side only)
+- `SUPABASE_STORAGE_BUCKET` -> storage bucket name for project cover uploads (default: `project-covers`)
+
+## Project Cover Uploads
+
+Admin CMS supports direct image uploads for `coverImageUrl`.
+
+Requirements:
+
+1. Create a Supabase Storage bucket (recommended name: `project-covers`).
+2. Set bucket visibility to `public` (so uploaded cover URLs can be rendered on the site).
+3. Set `SUPABASE_STORAGE_BUCKET` in environment variables (optional if using `project-covers`).
 
 ## Supabase RLS Policies
 
