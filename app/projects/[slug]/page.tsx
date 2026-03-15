@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug as getProjectBySlugFromRepo } from "@/lib/project-repo";
 import type { ProjectRecord } from "@/lib/types/project";
 
+const siteUrl = "https://spperera.me";
+
 type ProjectDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
@@ -33,11 +35,14 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.summary,
+    alternates: {
+      canonical: `${siteUrl}/projects/${project.slug}`,
+    },
     openGraph: {
       title: project.title,
       description: project.summary,
       type: "article",
-      url: `https://sasantha-portfolio.vercel.app/projects/${project.slug}`,
+      url: `${siteUrl}/projects/${project.slug}`,
       images: [coverImage],
     },
   };
