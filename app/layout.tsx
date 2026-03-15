@@ -4,6 +4,7 @@ import { Space_Grotesk } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { profile } from "@/content/profile";
+import { targetKeywords } from "@/content/seo";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const siteUrl = "https://spperera.me";
@@ -21,20 +22,7 @@ export const metadata: Metadata = {
   },
   description:
     "Sasantha Perera is a modern full-stack web developer in Sri Lanka helping businesses launch high-converting websites, eCommerce platforms, and custom web applications with Next.js and ASP.NET.",
-  keywords: [
-    "Business Website",
-    "Web developer in sri lanka",
-    "modern web developer",
-    "full stack developer",
-    "sri lanka web developer",
-    "ecommerce website",
-    "Perera",
-    "Next.js developer Sri Lanka",
-    "Full stack developer Piliyandala",
-    "Full stack web developer Piliyandala",
-    "Freelance web developer Sri Lanka",
-    "Custom website development Sri Lanka",
-  ],
+  keywords: targetKeywords,
   authors: [{ name: profile.name, url: siteUrl }],
   creator: profile.name,
   publisher: profile.name,
@@ -124,6 +112,10 @@ export default function RootLayout({
       "React",
       "Node.js",
       "ASP.NET",
+      "Website Design",
+      "Web Design",
+      "Frontend Development",
+      "Backend Development",
       "Ecommerce Website Development",
       "Business Website Development",
       "Full Stack Development",
@@ -152,6 +144,11 @@ export default function RootLayout({
     description:
       "Modern full-stack web development for business websites, ecommerce stores, and custom web apps.",
     serviceType: [
+      "Web Developer for Hire",
+      "Full Stack Developer for Hire",
+      "Front End Developer",
+      "Back End Developer",
+      "Professional Website Designer",
       "Business Website Development",
       "Ecommerce Website Development",
       "Full-Stack Web Application Development",

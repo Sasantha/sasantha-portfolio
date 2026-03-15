@@ -4,7 +4,17 @@ import { profile } from "@/content/profile";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Sasantha for full-stack development collaborations.",
+    "Contact Sasantha Perera, a web developer for hire in Sri Lanka, for website design, frontend and backend development, and ecommerce website projects.",
+  keywords: [
+    "web developer for hire",
+    "full stack developer for hire",
+    "freelance web developer",
+    "professional website designer",
+    "ecommerce website development near me",
+  ],
+  alternates: {
+    canonical: "https://spperera.me/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -12,11 +22,13 @@ export default function ContactPage() {
     <section aria-labelledby="contact-page-heading" className="grid gap-8 md:grid-cols-2">
       <div className="space-y-4">
         <h1 id="contact-page-heading" className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-          Contact
+          Hire a Web Developer in Sri Lanka
         </h1>
         <p className="text-slate-600">
-          I am available for full-stack product development, frontend
-          architecture, and API-focused backend work.
+          I am available for web development, website design, ecommerce website
+          development, frontend architecture, and API-focused backend work. If
+          you need a freelance web developer, professional web designer, or full
+          stack developer for hire, this is the best place to reach me.
         </p>
         <div className="space-y-2 text-sm text-slate-600">
           <p>
@@ -110,6 +122,10 @@ export default function ContactPage() {
         aria-label="Contact form"
         className="space-y-4 border border-slate-200 bg-white p-6 shadow-sm"
       >
+        <p className="text-sm text-slate-600">
+          Share your goals for a modern website, responsive website redesign,
+          ecommerce store, or custom frontend and backend build.
+        </p>
         <div>
           <label htmlFor="name" className="mb-1 block text-sm font-medium text-slate-700">
             Name

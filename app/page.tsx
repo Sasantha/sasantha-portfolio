@@ -2,12 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProjectCard } from "@/components/project-card";
 import { profile } from "@/content/profile";
+import { targetKeywords } from "@/content/seo";
 import type { ProjectRecord } from "@/lib/types/project";
 import { listProjects } from "@/lib/project-repo";
 
 export const metadata: Metadata = {
+  title: "Web Developer for Hire in Sri Lanka",
   description:
-    "Full-stack web developer in Sri Lanka specializing in Next.js, React, ASP.NET, and modern business systems. View my portfolio and completed projects.",
+    "Web developer for hire in Sri Lanka offering modern website design, frontend and backend development, ecommerce website development, and full-stack product delivery.",
+  keywords: targetKeywords,
+  alternates: {
+    canonical: "https://spperera.me",
+  },
 };
 export const dynamic = "force-dynamic";
 
@@ -27,7 +33,7 @@ export default async function HomePage() {
     "@type": "Person",
     name: profile.name,
     jobTitle: "Full Stack Web Developer",
-    url: "https://sasantha-portfolio.vercel.app",
+    url: "https://spperera.me",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Piliyandala",
@@ -57,11 +63,13 @@ export default async function HomePage() {
             id="hero-heading"
             className="max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl"
           >
-            Full-Stack Web Developer in Sri Lanka - Sasantha Perera
+            Web Developer for Hire in Sri Lanka
           </h1>
           <p className="max-w-2xl text-lg text-slate-600">
-            Building modern business websites, SaaS platforms, and API systems
-            using Next.js, React, Node.js and ASP.NET.
+            Sasantha Perera is a freelance web developer and full stack
+            developer for hire building modern websites, ecommerce platforms,
+            and custom business systems with Next.js, React, Node.js, and
+            ASP.NET.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -102,44 +110,77 @@ export default async function HomePage() {
         </aside>
       </section>
 
-      <section aria-labelledby="nextjs-react-heading" className="space-y-3">
-        <h2 id="nextjs-react-heading" className="text-2xl font-semibold text-slate-900">
-          Next.js & React Development
+      <section aria-labelledby="hire-heading" className="space-y-3">
+        <h2 id="hire-heading" className="text-2xl font-semibold text-slate-900">
+          Full Stack Developer for Hire
         </h2>
         <p className="max-w-3xl text-slate-600">
-          I build fast, SEO-friendly and maintainable frontend applications with
-          Next.js, React, and TypeScript for product teams and growing
-          businesses.
+          If you are looking for a web developer for hire, a front end
+          developer, a back end developer, or one partner who can handle front
+          end and back end delivery together, I help Sri Lankan and
+          international businesses launch polished digital products quickly.
+        </p>
+      </section>
+
+      <section aria-labelledby="nextjs-react-heading" className="space-y-3">
+        <h2 id="nextjs-react-heading" className="text-2xl font-semibold text-slate-900">
+          Front End Developer and Web UI Delivery
+        </h2>
+        <p className="max-w-3xl text-slate-600">
+          I build fast, SEO-friendly, and maintainable interfaces with Next.js,
+          React, and TypeScript. That includes landing pages, responsive web
+          design, dashboard interfaces, and modern web UI systems that work
+          across mobile and desktop.
         </p>
       </section>
 
       <section aria-labelledby="aspnet-backend-heading" className="space-y-3">
         <h2 id="aspnet-backend-heading" className="text-2xl font-semibold text-slate-900">
-          ASP.NET & Backend Systems
+          Back End Developer for APIs and Business Logic
         </h2>
         <p className="max-w-3xl text-slate-600">
           I develop dependable backend services, authentication flows, and data
-          models using ASP.NET, C#, and SQL-backed infrastructure.
+          models using ASP.NET, C#, Node.js, and SQL-backed infrastructure for
+          teams that need a reliable back end developer and clean full-stack
+          architecture.
         </p>
       </section>
 
       <section aria-labelledby="corporate-web-heading" className="space-y-3">
         <h2 id="corporate-web-heading" className="text-2xl font-semibold text-slate-900">
-          Corporate Website Development
+          Website Design and Web Development in Sri Lanka
         </h2>
         <p className="max-w-3xl text-slate-600">
-          I create conversion-focused corporate websites that prioritize
-          performance, accessibility, and clear content architecture.
+          I create modern website design systems for companies that need website
+          design in Sri Lanka, web design in Sri Lanka, or a professional
+          website designer instead of a traditional web design company. The
+          focus is always performance, accessibility, clear messaging, and
+          mobile-first execution.
         </p>
       </section>
 
-      <section aria-labelledby="api-business-heading" className="space-y-3">
-        <h2 id="api-business-heading" className="text-2xl font-semibold text-slate-900">
-          API & Business System Development
+      <section aria-labelledby="ecommerce-heading" className="space-y-3">
+        <h2 id="ecommerce-heading" className="text-2xl font-semibold text-slate-900">
+          Ecommerce Website Development
         </h2>
         <p className="max-w-3xl text-slate-600">
-          I design and implement APIs and internal business systems that connect
-          teams, automate workflows, and support long-term scaling.
+          I design and build ecommerce website development projects with product
+          catalogs, conversion-focused pages, secure checkout flows, and custom
+          integrations for brands that need a modern website builder experience
+          without template-heavy compromises.
+        </p>
+      </section>
+
+      <section aria-labelledby="search-intent-heading" className="space-y-3">
+        <h2 id="search-intent-heading" className="text-2xl font-semibold text-slate-900">
+          Professional Web Designer for Local and Remote Clients
+        </h2>
+        <p className="max-w-3xl text-slate-600">
+          Businesses often search for phrases like website developer near me,
+          web developer near me, website designer near me, professional web
+          designer near me, or ecommerce website designer near me. I work from
+          Sri Lanka and collaborate remotely, so clients can hire me for web
+          dev, website dev, and freelance website developer work from anywhere.
         </p>
       </section>
 
@@ -151,7 +192,11 @@ export default async function HomePage() {
         <h2 id="about-heading" className="text-2xl font-semibold text-slate-900">
           About
         </h2>
-        <p className="max-w-3xl text-slate-600">{profile.intro}</p>
+        <p className="max-w-3xl text-slate-600">
+          {profile.intro} I focus on modern website delivery, responsive web
+          design, and scalable full-stack product work for businesses that want
+          a clean online presence and measurable results.
+        </p>
         <div className="flex flex-wrap gap-2">
           {profile.skills.map((skill) => (
             <span
@@ -202,8 +247,9 @@ export default async function HomePage() {
           Let&apos;s build something useful.
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-slate-600">
-          Open to collaborating on product engineering, platform architecture,
-          and performance-focused frontend work.
+          Open to collaborating on website design, web development, ecommerce
+          website development, and full-stack product engineering for clients in
+          Sri Lanka and beyond.
         </p>
         <div className="mt-6">
           <Link

@@ -5,7 +5,19 @@ import { listProjects } from "@/lib/project-repo";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "A collection of full-stack and frontend projects by Sasantha.",
+  description:
+    "Portfolio projects covering modern website design, ecommerce website development, frontend engineering, and backend systems by Sasantha Perera.",
+  keywords: [
+    "best portfolio websites",
+    "web development",
+    "front end developer",
+    "back end developer",
+    "ecommerce website development",
+    "modern website",
+  ],
+  alternates: {
+    canonical: "https://spperera.me/projects",
+  },
 };
 export const dynamic = "force-dynamic";
 
@@ -24,10 +36,11 @@ export default async function ProjectsPage() {
     <section aria-labelledby="projects-page-heading" className="space-y-8">
       <header className="space-y-3">
         <h1 id="projects-page-heading" className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-          Projects
+          Portfolio Projects
         </h1>
         <p className="max-w-3xl text-slate-600">
-          Selected work across SaaS dashboards, business workflow systems, and
+          Selected work across modern website design, SaaS dashboards, ecommerce
+          website development, business workflow systems, and
           performance-focused web applications.
         </p>
       </header>
