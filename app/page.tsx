@@ -171,19 +171,6 @@ export default async function HomePage() {
         </p>
       </section>
 
-      <section aria-labelledby="search-intent-heading" className="space-y-3">
-        <h2 id="search-intent-heading" className="text-2xl font-semibold text-slate-900">
-          Professional Web Designer for Local and Remote Clients
-        </h2>
-        <p className="max-w-3xl text-slate-600">
-          Businesses often search for phrases like website developer near me,
-          web developer near me, website designer near me, professional web
-          designer near me, or ecommerce website designer near me. I work from
-          Sri Lanka and collaborate remotely, so clients can hire me for web
-          dev, website dev, and freelance website developer work from anywhere.
-        </p>
-      </section>
-
       <section
         id="about"
         aria-labelledby="about-heading"
