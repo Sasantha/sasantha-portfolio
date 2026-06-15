@@ -7,9 +7,9 @@ import type { ProjectRecord } from "@/lib/types/project";
 import { listProjects } from "@/lib/project-repo";
 
 export const metadata: Metadata = {
-  title: "Web Developer for Hire in Sri Lanka",
+  title: "Sasantha Perera - Full Stack Software Engineer in Sri Lanka",
   description:
-    "Web developer for hire in Sri Lanka offering modern website design, frontend and backend development, ecommerce website development, and full-stack product delivery.",
+    "Full-stack engineer specializing in Full-stack websites.",
   keywords: targetKeywords,
   alternates: {
     canonical: "https://spperera.me",
@@ -32,7 +32,7 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name,
-    jobTitle: "Full Stack Web Developer",
+    jobTitle: "Full Stack Software Engineer",
     url: "https://spperera.me",
     address: {
       "@type": "PostalAddress",
@@ -63,13 +63,10 @@ export default async function HomePage() {
             id="hero-heading"
             className="max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl"
           >
-            Web Developer for Hire in Sri Lanka
+            Full Stack Software Engineer / Web Developer in Sri Lanka
           </h1>
           <p className="max-w-2xl text-lg text-slate-600">
-            Sasantha Perera is a freelance web developer and full stack
-            developer for hire building modern websites, ecommerce platforms,
-            and custom business systems with Next.js, React, Node.js, and
-            ASP.NET.
+            Full-stack engineer specializing in SaaS MVPs and custom platforms — from spec to production, shipped and maintainable including international platforms and custom business systems with Next.js, React, Node.js, and ASP.NET.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -82,7 +79,7 @@ export default async function HomePage() {
               href="/contact"
               className="border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-900"
             >
-              Contact Me
+              Start a project
             </Link>
           </div>
         </div>
@@ -108,18 +105,6 @@ export default async function HomePage() {
             </li>
           </ul>
         </aside>
-      </section>
-
-      <section aria-labelledby="hire-heading" className="space-y-3">
-        <h2 id="hire-heading" className="text-2xl font-semibold text-slate-900">
-          Full Stack Developer for Hire
-        </h2>
-        <p className="max-w-3xl text-slate-600">
-          If you are looking for a web developer for hire, a front end
-          developer, a back end developer, or one partner who can handle front
-          end and back end delivery together, I help Sri Lankan and
-          international businesses launch polished digital products quickly.
-        </p>
       </section>
 
       <section aria-labelledby="nextjs-react-heading" className="space-y-3">
