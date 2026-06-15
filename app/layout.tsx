@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${profile.name} portfolio preview`,
+        alt: "Sasantha Perera — full-stack engineer building SaaS MVPs and custom web apps.",
       },
     ],
   },
@@ -127,7 +127,7 @@ export default function RootLayout({
         name: "Freelance Web Development Services",
         serviceType: "Business Website and Ecommerce Development",
       },
-      areaServed: "Sri Lanka",
+      areaServed: ["Sri Lanka", "Worldwide"],
       availability: "https://schema.org/InStock",
       url: `${siteUrl}/contact`,
     },
@@ -139,19 +139,15 @@ export default function RootLayout({
     name: "Sasantha Perera Web Development",
     url: siteUrl,
     image: `${siteUrl}/og.png`,
-    areaServed: "Sri Lanka",
+    areaServed: ["Sri Lanka", "Worldwide"],
     founder: profile.name,
     description:
       "Modern full-stack web development for business websites, ecommerce stores, and custom web apps.",
     serviceType: [
+      "SaaS MVP Development",
+      "Custom Web Application Development",
+      "Full-Stack Engineering",
       "Web Developer for Hire",
-      "Full Stack Developer for Hire",
-      "Front End Developer",
-      "Back End Developer",
-      "Professional Website Designer",
-      "Business Website Development",
-      "Ecommerce Website Development",
-      "Full-Stack Web Application Development",
     ],
     knowsAbout: ["Next.js", "React", "Node.js", "ASP.NET", "TypeScript"],
     potentialAction: {
@@ -197,7 +193,7 @@ export default function RootLayout({
           </header>
           <main className="flex-1 py-10">{children}</main>
           <footer className="border-t border-slate-200 py-6 text-center text-sm text-slate-500">
-            <p>(c) {new Date().getFullYear()} {profile.name}. Built with Next.js and Tailwind.</p>
+            <p>(c) {new Date().getFullYear()} {profile.name}. Full-stack engineer · Sri Lanka · Available worldwide. Built with Next.js and Tailwind.</p>
           </footer>
           <Analytics />
         </div>

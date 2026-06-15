@@ -38,11 +38,31 @@ export default function ContactPage() {
             </a>
           </p>
           <p>
+            <span className="font-semibold text-slate-800">Support:</span>{" "}
+            <a className="underline underline-offset-4" href={`mailto:${profile.emailSupport}`}>
+              {profile.emailSupport}
+            </a>
+          </p>
+          <p>
+            <span className="font-semibold text-slate-800">WhatsApp:</span>{" "}
+            <a className="underline underline-offset-4" href={profile.socials.whatsapp} target="_blank" rel="noreferrer">
+              +94 76 159 2541
+            </a>
+          </p>
+          <p>
             <span className="font-semibold text-slate-800">Location:</span>{" "}
             {profile.location}
           </p>
         </div>
         <div className="flex flex-wrap gap-3 pt-2">
+          <a
+            href={profile.socials.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-900"
+          >
+            WhatsApp
+          </a>
           <a
             href={profile.socials.github}
             target="_blank"

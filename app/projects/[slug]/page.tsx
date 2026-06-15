@@ -67,7 +67,7 @@ export default async function ProjectDetailPage({
         <div className="overflow-hidden border border-slate-200 bg-slate-100">
           <Image
             src={project.coverImageUrl || "/placeholder.svg"}
-            alt={`${project.title} cover image`}
+            alt={project.imageAlt ?? `${project.title} — ${project.category ?? "project"} screenshot`}
             width={1200}
             height={630}
             className="h-auto w-full object-cover"

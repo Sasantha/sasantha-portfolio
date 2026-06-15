@@ -3,11 +3,13 @@ export const profile = {
   title: "Full-Stack Developer / Web Developer",
   location: "Piliyandala, Sri Lanka",
   email: "sasanthaperera1@gmail.com",
+  emailSupport: "support@spperera.me",
   summary:
     "I enjoy turning ideas into working digital products, whether it’s a complete business website, a functional backend API, or a mobile app prototype. I am continuously improving my skills through real projects, collaboration, and self-learning. I am passionate about building user-friendly, performant, and scalable web applications that solve real-world problems.",
   intro:
     "I work across TypeScript, React, Next.js, Node.js, and cloud tooling to ship user-facing products quickly without sacrificing engineering quality.",
   socials: {
+    whatsapp: "https://wa.me/94761592541",
     github: "https://github.com/sasantha",
     linkedin: "https://www.linkedin.com/in/sasantha-perera-4233b9206",
     x: "https://x.com/sasantha",

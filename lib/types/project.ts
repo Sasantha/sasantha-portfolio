@@ -10,6 +10,8 @@ export type ProjectView = {
   repoUrl: string | null;
   featured?: boolean;
   coverImageUrl?: string | null;
+  imageAlt?: string | null;
+  category?: string | null;
 };
 
 export type ProjectRecord = ProjectView & {

@@ -15,7 +15,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="overflow-hidden border border-slate-200 bg-slate-100">
           <Image
             src={coverImage}
-            alt={`${project.title} cover image`}
+            alt={project.imageAlt ?? `${project.title} — ${project.category ?? "project"} screenshot`}
             width={800}
             height={420}
             className="h-44 w-full object-cover"
