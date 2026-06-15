@@ -63,7 +63,7 @@ export default async function HomePage() {
             id="hero-heading"
             className="max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl"
           >
-            Full Stack Software Engineer / Web Developer in Sri Lanka
+            Full Stack Software Engineer in Sri Lanka
           </h1>
           <p className="max-w-2xl text-lg text-slate-600">
             Full-stack engineer specializing in SaaS MVPs and custom platforms — from spec to production, shipped and maintainable including international platforms and custom business systems with Next.js, React, Node.js, and ASP.NET.
@@ -105,55 +105,6 @@ export default async function HomePage() {
             </li>
           </ul>
         </aside>
-      </section>
-
-      <section aria-labelledby="nextjs-react-heading" className="space-y-3">
-        <h2 id="nextjs-react-heading" className="text-2xl font-semibold text-slate-900">
-          Front End Developer and Web UI Delivery
-        </h2>
-        <p className="max-w-3xl text-slate-600">
-          I build fast, SEO-friendly, and maintainable interfaces with Next.js,
-          React, and TypeScript. That includes landing pages, responsive web
-          design, dashboard interfaces, and modern web UI systems that work
-          across mobile and desktop.
-        </p>
-      </section>
-
-      <section aria-labelledby="aspnet-backend-heading" className="space-y-3">
-        <h2 id="aspnet-backend-heading" className="text-2xl font-semibold text-slate-900">
-          Back End Developer for APIs and Business Logic
-        </h2>
-        <p className="max-w-3xl text-slate-600">
-          I develop dependable backend services, authentication flows, and data
-          models using ASP.NET, C#, Node.js, and SQL-backed infrastructure for
-          teams that need a reliable back end developer and clean full-stack
-          architecture.
-        </p>
-      </section>
-
-      <section aria-labelledby="corporate-web-heading" className="space-y-3">
-        <h2 id="corporate-web-heading" className="text-2xl font-semibold text-slate-900">
-          Website Design and Web Development in Sri Lanka
-        </h2>
-        <p className="max-w-3xl text-slate-600">
-          I create modern website design systems for companies that need website
-          design in Sri Lanka, web design in Sri Lanka, or a professional
-          website designer instead of a traditional web design company. The
-          focus is always performance, accessibility, clear messaging, and
-          mobile-first execution.
-        </p>
-      </section>
-
-      <section aria-labelledby="ecommerce-heading" className="space-y-3">
-        <h2 id="ecommerce-heading" className="text-2xl font-semibold text-slate-900">
-          Ecommerce Website Development
-        </h2>
-        <p className="max-w-3xl text-slate-600">
-          I design and build ecommerce website development projects with product
-          catalogs, conversion-focused pages, secure checkout flows, and custom
-          integrations for brands that need a modern website builder experience
-          without template-heavy compromises.
-        </p>
       </section>
 
       <section
