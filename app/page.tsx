@@ -116,13 +116,7 @@ export default async function HomePage() {
           About
         </h2>
         <p className="max-w-3xl text-slate-600">
-          {profile.intro} Most software gets built twice: once cheap and fast to prove the idea, then again — 
-painfully — when it actually works. I build the first version like it has to last, 
-because if your idea works, it does. I'm a full-stack engineer who partners with 
-founders on the products they're betting the company on — SaaS platforms, B2B tools, 
-and long-haul ideas that only pay off if the code can grow with them. TypeScript, 
-React, Next.js, Node, and cloud: used not to show off a stack, but to ship something 
-your users trust and your future team won't have to tear out.
+          {profile.intro} 
         </p>
         <div className="flex flex-wrap gap-2">
           {profile.skills.map((skill) => (
