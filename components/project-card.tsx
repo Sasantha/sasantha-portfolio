@@ -10,7 +10,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const coverImage = project.coverImageUrl || "/placeholder.svg";
 
   return (
-    <article className="flex h-full flex-col justify-between border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+    <article className="flex h-full flex-col justify-between border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-6">
       <div className="space-y-4">
         <div className="overflow-hidden border border-slate-200 bg-slate-100">
           <Image

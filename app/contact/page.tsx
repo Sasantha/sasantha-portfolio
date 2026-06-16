@@ -140,7 +140,7 @@ export default function ContactPage() {
 
       <form
         aria-label="Contact form"
-        className="space-y-4 border border-slate-200 bg-white p-6 shadow-sm"
+        className="space-y-4 border border-slate-200 bg-white p-4 shadow-sm sm:p-6"
       >
         <p className="text-sm text-slate-600">
           Share your goals for a modern website, responsive website redesign,

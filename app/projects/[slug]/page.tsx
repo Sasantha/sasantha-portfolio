@@ -59,7 +59,7 @@ export default async function ProjectDetailPage({
   }
 
   return (
-    <article className="space-y-8">
+    <article className="space-y-6 sm:space-y-8">
       <header className="space-y-4 border-b border-slate-200 pb-8">
         <p className="text-sm font-semibold tracking-wide text-slate-600">
           Project Detail

@@ -43,14 +43,14 @@ export default async function HomePage() {
   };
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-10 sm:space-y-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <section
         aria-labelledby="hero-heading"
-        className="grid gap-8 py-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"
+        className="grid gap-8 py-6 sm:py-8 md:grid-cols-[1.2fr_0.8fr] md:items-center"
       >
         <div className="space-y-5">
           <p className="inline-flex w-fit border border-slate-300 px-3 py-1 text-xs font-semibold tracking-wide text-slate-700">
@@ -61,11 +61,11 @@ export default async function HomePage() {
           </p>
           <h1
             id="hero-heading"
-            className="max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl"
+            className="max-w-2xl text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl md:text-5xl"
           >
             Full Stack Software Engineer in Sri Lanka
           </h1>
-          <p className="max-w-2xl text-lg text-slate-600">
+          <p className="max-w-2xl text-base text-slate-600 sm:text-lg">
             Full-stack engineer specializing in SaaS MVPs and custom platforms — from spec to production, shipped and maintainable including international platforms and custom business systems with Next.js, React, Node.js, and ASP.NET.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -162,7 +162,7 @@ export default async function HomePage() {
       <section
         id="contact"
         aria-labelledby="contact-heading"
-        className="scroll-mt-24 border border-slate-200 bg-white p-8 text-center shadow-sm"
+        className="scroll-mt-24 border border-slate-200 bg-white p-5 text-center shadow-sm sm:p-8"
       >
         <h2 id="contact-heading" className="text-2xl font-semibold text-slate-900">
           Let&apos;s build something useful.

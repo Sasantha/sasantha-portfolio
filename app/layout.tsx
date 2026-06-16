@@ -167,9 +167,10 @@ export default function RootLayout({
               className="flex items-center justify-between px-4 py-3 sm:px-6"
             >
               <Link href="/" className="nav-text text-sm font-semibold tracking-wide">
-                {profile.name}
+                <span className="hidden sm:inline">{profile.name}</span>
+                <span className="sm:hidden">SP</span>
               </Link>
-              <ul className="nav-text flex items-center gap-4 text-sm text-slate-600 sm:gap-6">
+              <ul className="nav-text flex items-center gap-2 text-sm text-slate-600 sm:gap-4 lg:gap-6">
                 <li>
                   <Link className="nav-link" href="/#about">
                     About
