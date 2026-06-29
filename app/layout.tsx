@@ -186,6 +186,14 @@ export default function RootLayout({
                     Contact
                   </Link>
                 </li>
+                <li className="hidden sm:block">
+                  <Link
+                    className="nav-cta border border-slate-900 bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-slate-800"
+                    href="/start-project"
+                  >
+                    Start a Project
+                  </Link>
+                </li>
                 <li>
                   <ThemeToggle />
                 </li>

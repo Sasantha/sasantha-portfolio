@@ -70,16 +70,16 @@ export default async function HomePage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/projects"
+              href="/start-project"
               className="border border-slate-900 bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
-              View Projects
+              Start a Project
             </Link>
             <Link
-              href="/contact"
+              href="/projects"
               className="border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-900"
             >
-              Start a project
+              View Projects
             </Link>
           </div>
         </div>
@@ -174,10 +174,10 @@ export default async function HomePage() {
         </p>
         <div className="mt-6">
           <Link
-            href="/contact"
+            href="/start-project"
             className="border border-slate-900 bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
-            Get in touch
+            Start a Project
           </Link>
         </div>
       </section>

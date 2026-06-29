@@ -127,3 +127,25 @@ a {
   background: #cbd5e1;
   color: #0f172a;
 }
+
+/* Nav CTA button — overrides the blanket nav-shell color reset */
+.nav-shell .nav-cta,
+.nav-shell a.nav-cta {
+  color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .nav-shell .nav-cta,
+:root[data-theme="dark"] .nav-shell a.nav-cta {
+  background-color: #00ffff !important;
+  border-color: #00ffff !important;
+  color: #000000 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .nav-shell .nav-cta,
+  :root:not([data-theme]) .nav-shell a.nav-cta {
+    background-color: #00ffff !important;
+    border-color: #00ffff !important;
+    color: #000000 !important;
+  }
+}
