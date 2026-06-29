@@ -98,7 +98,7 @@ export default function StartProjectPage() {
         </h1>
         <p className="max-w-2xl text-base text-slate-600 sm:text-lg">
           Fill in the form below and I&apos;ll respond within one business day.
-          No retainers, no agencies — direct hire, fixed price, shipped on time.
+          Direct hire, fixed price, shipped on time.
         </p>
       </section>
 
