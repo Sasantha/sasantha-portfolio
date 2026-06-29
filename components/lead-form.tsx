@@ -268,12 +268,21 @@ export function LeadForm() {
 
         {/* Turnstile */}
         <div>
-          <div
-            className="cf-turnstile"
-            data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-            data-callback="onTurnstileSuccess"
-            data-expired-callback="onTurnstileExpired"
-          />
+          {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ? (
+            <div
+              className="cf-turnstile"
+              data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              data-callback="onTurnstileSuccess"
+              data-expired-callback="onTurnstileExpired"
+            />
+          ) : (
+            <p className="border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+              Security widget not configured —{" "}
+              <code>NEXT_PUBLIC_TURNSTILE_SITE_KEY</code> is missing from your
+              environment. Set it in <code>.env.local</code> and restart the dev
+              server.
+            </p>
+          )}
           {errors.turnstile && (
             <p className={errorClass} role="alert">
               {errors.turnstile}

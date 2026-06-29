@@ -45,9 +45,9 @@ export function ThemeToggle() {
       onClick={handleToggle}
       className="nav-text border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-900 transition hover:border-slate-900"
     >
-      <span suppressHydrationWarning>
-        <span className="sm:hidden">{theme === "light" ? "Dark" : "Light"}</span>
-        <span className="hidden sm:inline">{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
+      <span>
+        <span suppressHydrationWarning className="sm:hidden">{theme === "light" ? "Dark" : "Light"}</span>
+        <span suppressHydrationWarning className="hidden sm:inline">{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
       </span>
     </button>
   );
